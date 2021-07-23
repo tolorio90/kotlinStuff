@@ -34,9 +34,10 @@ fun addStringNumbers(stringNumbers: String): String{
     var s: String = ""
     var sum: Int = 0
 
-    for(s1: String in stringNumbers.toLowerCase().split('-',',',' ',';')){
-        s += numbersMap.getValue(s1).toString() + "+"
-        sum += numbersMap.getValue(s1)
+    for(stringNumber: String in stringNumbers.toLowerCase().split('-',',',' ',';')){
+        var intNumber: Int = numbersMap.getValue(stringNumber)
+        s += intNumber.toString() + "+"
+        sum += intNumber
     }
 
     return s.substring(startIndex = 0, endIndex = s.length-1) + "=" + sum.toString()

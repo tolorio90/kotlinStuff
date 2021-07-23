@@ -17,25 +17,25 @@ fun main() {
 //input:    String: written out numbers from 0-9 separated by '-,; '
 //return:   String: numbers as Int-String and their sum, separated by '+' and '='
 //          addStringNumbers("one-two-tree") returns "1+2+3=6"
-fun addStringNumbers(stringNumbers: String): String{
-    val numbersMap = mapOf(
-        "zero" to 0,
-        "one" to 1,
-        "two" to 2,
-        "three" to 3,
-        "four" to 4,
-        "five" to 5,
-        "six" to 6,
-        "seven" to 7,
-        "eight" to 8,
-        "nine" to 9)
-        .withDefault { 0 }
+val numbersMap = mapOf(
+    "zero" to 0,
+    "one" to 1,
+    "two" to 2,
+    "three" to 3,
+    "four" to 4,
+    "five" to 5,
+    "six" to 6,
+    "seven" to 7,
+    "eight" to 8,
+    "nine" to 9)
+    .withDefault { 0 }
 
+fun addStringNumbers(stringNumbers: String): String{
     var s: String = ""
     var sum: Int = 0
 
     for(stringNumber: String in stringNumbers.toLowerCase().split('-',',',' ',';')){
-        var intNumber: Int = numbersMap.getValue(stringNumber)
+        val intNumber: Int = numbersMap.getValue(stringNumber)
         s += "$intNumber+"
         sum += intNumber
     }

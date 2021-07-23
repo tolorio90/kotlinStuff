@@ -40,5 +40,5 @@ fun addStringNumbers(stringNumbers: String): String{
         sum += intNumber
     }
 
-    return s.substring(startIndex = 0, endIndex = s.length-1) + "=" + sum.toString()
+    return "${s.dropLast(1)}=$sum"
 }
